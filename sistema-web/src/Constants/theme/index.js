@@ -20,4 +20,3 @@ export const Colors = {
 
 }
 
-/*#101010 */
