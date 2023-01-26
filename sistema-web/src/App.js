@@ -1,10 +1,11 @@
 import React from "react";
-import WebPage from "./Pages/WebPage";
 import { GlobalStyle } from "./Constants/theme"
+import Rotas from "./Routes";
+
 function App() {
   return (
     <>
-      <WebPage />
+      <Rotas/>
       <GlobalStyle />
     </>
   );

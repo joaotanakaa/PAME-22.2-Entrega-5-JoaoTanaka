@@ -8,7 +8,7 @@ width: 100vw;
 min-height: 100vh;
 background-color: ${Colors.White};
 display: flex;
-flex-direction: column;
+flex-direction: row;
 `
 
 export const Header = styled.div`
@@ -16,12 +16,8 @@ width: 100%;
 height: 20%;
 display: flex;
 align-items: center;
-justify-content: space-evenly;
+justify-content: center;
 background-color: ${Colors.Black};
-`
-
-export const ButtonsDiv = styled.div`
-
 `
 
 export const HeaderTitle = styled.text`
@@ -80,21 +76,21 @@ export const DivItem = styled.div`
 margin-top: 5px;
 `
 
-export const Body = styled.div`
+export const BigDiv = styled.div`
 width: 50vw;
-min-height: 60vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-background-color: ${Colors.White};
-
-` 
-
-export const BigDiv2 = styled.div`
-width: 100vw;
-min-height: 100vh;
+min-height: 50vh;
 background-color: ${Colors.White};
 display: flex;
 flex-direction: column;
 border-color: ${Colors.Black};
 `
+
+export const Body = styled.div`
+width: 50vw;
+min-height: 60vh;
+display: flex;
+flex-direction: column;
+align-items: top;
+background-color: ${Colors.White};
+
+` 

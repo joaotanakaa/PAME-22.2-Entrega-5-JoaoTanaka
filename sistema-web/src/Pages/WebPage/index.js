@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { Background, Button, DeleteButton, DivInput, DivItem, Header, HeaderTitle, Input, Lista } from "./styles";
-
+import { Background, Button, ButtonsDiv, DeleteButton, DivInput, DivItem, Header, HeaderTitle, Input, Lista } from "./styles";
+import ButtonRoute from "../../Components/Button";
 
 function WebPage() {
   
@@ -32,24 +32,31 @@ function WebPage() {
       setNewItem('');
     }
 
+    const buts = [{name: 'Checklist', link: '/'},{name: 'Entrada/Saida', link: '/EntradaSaida'}]
+
   return (
     <Background>
       <Header>
         <HeaderTitle>CHECK LIST</HeaderTitle>
+        <ButtonsDiv>
+          {buts.map((item, index)=>(<ButtonRoute key = {index} name = {item.name} link = {item.link}></ButtonRoute>))}
+        </ButtonsDiv>
       </Header>
-      <DivInput>
-        <Input 
-          onChange={(evento) => setNewItem(evento.target.value)} 
-          type="text" 
-          placeholder="Adicione sua Tarefa..."
-          value= {newItem}
-          
-        ></Input>
-        <Button onClick={addItemToList}>Adicionar</Button>
-      </DivInput>
-      <Lista> {arrayDeToDos.map((item)=> {
-        return <DivItem key={item.id}> {item.value} <DeleteButton onClick={() => deleteItem(item.id)}> x </DeleteButton></DivItem> 
-      })} </Lista>
+        <DivInput>
+          <Input 
+            onChange={(evento) => setNewItem(evento.target.value)} 
+            type="text" 
+            placeholder="Adicione sua Tarefa..."
+            value= {newItem}
+            
+          ></Input>
+          <Button onClick={addItemToList}>Adicionar</Button>
+        </DivInput>
+        <Lista> {arrayDeToDos.map((item)=> {
+          return <DivItem key={item.id}> {item.value} <DeleteButton onClick={() => deleteItem(item.id)}> x </DeleteButton></DivItem> 
+        })} </Lista>
+      
+      
 
 
     </Background>
